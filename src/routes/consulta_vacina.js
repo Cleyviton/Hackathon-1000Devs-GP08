@@ -9,5 +9,17 @@ routes.get(
   "/consulta/vacina/idade/:idade",
   consultaVacinaController.getConsultaVacinaPorIdade
 );
+routes.get(
+  "/consulta/vacina/mes/:mes",
+  consultaVacinaController.getConsultaVacinaPorMes
+);
+routes.get(
+  "/consulta/vacina/range/idade/:idade",
+  consultaVacinaController.getConsultaVacinaPorIdadeRange
+);
+routes.get(
+  "/consulta/vacina/range/mes/:mes",
+  consultaVacinaController.getConsultaVacinaPorMesRange
+);
 
 module.exports = routes;
