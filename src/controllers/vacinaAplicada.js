@@ -4,20 +4,12 @@ const getVacinaAplicada = async (req, res, next) => {
     try {
         const userId = req.params.userId;
 
-        const paciente = await pool.query(
-            "SELECT * FROM PACIENTE WHERE Id_paciente = $1",
-            [userId]
-        );
-
         const vacinas = await pool.query(
-            "SELECT * FROM VACINA JOIN VACINAAPLICADA AS VA ON VACINA.Id_vacina = VA.Id_vacina WHERE VA.Id_paciente = $1",
+            "SELECT * FROM VACINAAPLICADA AS VA WHERE VA.Id_paciente = $1",
             [userId]
         );
 
-        return res.json({
-            ...paciente.rows[0],
-            vacinasAplicadas: vacinas.rows,
-        });
+        return res.json(vacinas.rows);
     } catch (error) {
         return res.json(error);
     }
