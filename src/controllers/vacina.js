@@ -15,7 +15,7 @@ module.exports = {
         "INSERT INTO VACINA (id_vacina, vacina, sigla_vacina, doenca_protecao, dose, id_rede) VALUES ($1,$2, $3,$4,$5,$6) RETURNING *",
         [id_vacina, vacina, sigla_vacina, doenca_protecao, dose, id_rede]
       );
-      return res.status(204).json(result.rows);
+      return res.status(201).json(result.rows);
     } catch (error) {
       console.log(error);
       return res.json(error);
