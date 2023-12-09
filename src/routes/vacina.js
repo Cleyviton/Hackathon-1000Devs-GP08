@@ -3,6 +3,12 @@ const express = require("express");
 const vacinaController = require("../controllers/vacina");
 
 const routes = express.Router();
+/**
+ * @swagger
+ * tags:
+ *   name: Vacina
+ *   description: Operações relacionadas a vacinas
+ */
 
 routes.post("/vacina/create", vacinaController.cadastroVacina);
 routes.put("/vacina/update", vacinaController.editarVacina);
