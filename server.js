@@ -12,8 +12,8 @@ const PORT = 3000; // porta do app
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
-      title: "Nome da Sua API",
-      description: "Descrição da Sua API",
+      title: "Hackthon vacina",
+      description: "Sistema de vacinas",
       version: "1.0.0",
     },
   },
