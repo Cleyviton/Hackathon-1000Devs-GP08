@@ -6,5 +6,5 @@ const routes = express.Router();
 
 routes.get("/pacientes", pacienteController.getPaciente);
 routes.post("/pacientes/create", pacienteController.createPaciente);
-
+routes.put("/pacientes/update", pacienteController.updatePaciente);
 module.exports = routes;

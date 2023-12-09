@@ -29,4 +29,20 @@ module.exports = {
       return res.status(500).json({ error: error.message });
     }
   },
+
+  async updatePaciente(req, res, next) {
+    try {
+      console.log(req.body);
+      const { nome, Data_nascimento, id_paciente } = req.body;
+      const result = await pool.query(
+        "UPDATE PACIENTE SET nome = $2, Data_nascimento = $3 WHERE id_paciente = $1 RETURNING *",
+        [id_paciente, nome, Data_nascimento]
+      );
+
+      return res.json(result.rows[0]);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ error: error.message });
+    }
+  },
 };
