@@ -1,10 +1,10 @@
 const { Pool } = require("pg");
 
 const pool = {
-  user: "pearl",
-  host: "itcpostgresql.postgres.database.azure.com",
-  database: "db008",
-  password: "%&unsas_aew27008",
+  user: process.env.USER,
+  host: process.env.HOST,
+  database: process.env.DB,
+  password: process.env.PASS,
   port: 5432,
   ssl: true,
 };
