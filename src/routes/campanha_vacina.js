@@ -210,4 +210,47 @@ routes.delete("/camapanha/delete", campanhaVacinaController.deleteCampanha);
  */
 routes.get("/campanha/data", campanhaVacinaController.getDataCampanha);
 
+/**
+ * @swagger
+ * /campanha/data/protecao:
+ *   get:
+ *     summary: Obtém campanhas de vacinação ativas para uma data específica e proteção contra doença
+ *     tags:
+ *       - Campanha
+ *     parameters:
+ *       - in: query
+ *         name: data
+ *         description: Data para a qual as campanhas ativas devem ser recuperadas (formato YYYY-MM-DD)
+ *         required: true
+ *         schema:
+ *           type: string
+ *           format: date
+ *       - in: query
+ *         name: protecao
+ *         description: Parte da descrição da doença protegida pela vacina
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Sucesso ao obter campanhas ativas para a data e proteção especificadas
+ *         content:
+ *           application/json:
+ *             example:
+ *               - id_campanha: 1
+ *                 descricao: "Campanha de Vacinação Influenza 2023"
+ *                 data_inicio: "2023-01-01"
+ *                 data_fim: "2023-12-31"
+ *                 vacinas:
+ *                   - id_vacina: 1
+ *                     vacina: "Influenza"
+ *                     sigla_vacina: "INF"
+ *       500:
+ *         description: Erro interno do servidor
+ */
+routes.get(
+  "/campanha/data/protecao",
+  campanhaVacinaController.getDataCampanhaProtecao
+);
+
 module.exports = routes;

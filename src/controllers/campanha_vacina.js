@@ -94,4 +94,26 @@ module.exports = {
       return res.status(500).json({ error: error.message });
     }
   },
+
+  async getDataCampanhaProtecao(req, res, next) {
+    try {
+      const { data, protecao } = req.query;
+      const result = await pool.query(
+        `
+        SELECT c.*, v.*
+        FROM campanha c
+        JOIN campanhavacina cv ON cv.id_campanha = c.id_campanha
+        JOIN vacina v ON v.id_vacina = cv.id_vacina
+        WHERE c.data_inicio <= TO_DATE($1, 'YYYY-MM-DD')
+          AND c.data_fim >= TO_DATE($1, 'YYYY-MM-DD') 
+          AND doenca_protecao ILIKE $2
+      `,
+        [data, `%${protecao}%`]
+      );
+      return res.status(200).json(result.rows);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ error: error.message });
+    }
+  },
 };
