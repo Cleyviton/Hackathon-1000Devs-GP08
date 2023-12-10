@@ -10,7 +10,7 @@ const vacina = require("./src/routes/vacina");
 const consultaVacina = require("./src/routes/consulta_vacina");
 const consultaVacinaProtecao = require("./src/routes/consulta_vacina-protecao");
 const PORT = 3000; // porta do app
-
+const d = require("./src/routes/consulta_vacina.js");
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
@@ -19,7 +19,11 @@ const swaggerOptions = {
       version: "1.0.0",
     },
   },
-  apis: ["./src/routes/vacina.js"], // Substitua pelo caminho real para o arquivo com suas rotas
+  apis: [
+    "./src/routes/vacina.js",
+    "./src/routes/consulta_vacina.js",
+    "./src/routes/consulta_vacina-protecao.js",
+  ], // Substitua pelo caminho real para o arquivo com suas rotas
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);

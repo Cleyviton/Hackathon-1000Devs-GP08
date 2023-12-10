@@ -6,24 +6,24 @@ const routes = express.Router();
 
 routes.get("/consulta/vacina", consultaVacinaController.getConsultaVacina);
 routes.get(
-    "/consulta/vacina/idade/:idade",
-    consultaVacinaController.getConsultaVacinaPorIdade
+  "/consulta/vacina/idade/:idade",
+  consultaVacinaController.getConsultaVacinaPorIdade
 );
 routes.get(
-    "/consulta/vacina/mes/:mes",
-    consultaVacinaController.getConsultaVacinaPorMes
+  "/consulta/vacina/mes/:mes",
+  consultaVacinaController.getConsultaVacinaPorMes
 );
 routes.get(
-    "/consulta/vacina/range/idade/:idade",
-    consultaVacinaController.getConsultaVacinaPorIdadeRange
+  "/consulta/vacina/range/idade/:idade",
+  consultaVacinaController.getConsultaVacinaPorIdadeRange
 );
 routes.get(
-    "/consulta/vacina/range/mes/:mes",
-    consultaVacinaController.getConsultaVacinaPorMesRange
+  "/consulta/vacina/range/mes/:mes",
+  consultaVacinaController.getConsultaVacinaPorMesRange
 );
 routes.get(
-    "/consulta/vacina/paciente/:id_paciente",
-    consultaVacinaController.getConsultaVacinaPorPaciente
+  "/consulta/vacina/paciente/:id_paciente",
+  consultaVacinaController.getConsultaVacinaPorPaciente
 );
 
 module.exports = routes;
