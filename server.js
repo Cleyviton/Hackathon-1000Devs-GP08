@@ -10,7 +10,7 @@ const vacina = require("./src/routes/vacina");
 const consultaVacina = require("./src/routes/consulta_vacina");
 const consultaVacinaProtecao = require("./src/routes/consulta_vacina-protecao");
 const PORT = 3000; // porta do app
-const d = require("./src/routes/consulta_vacina.js");
+
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
