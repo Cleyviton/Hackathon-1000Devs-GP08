@@ -11,7 +11,7 @@ const getVacinaAplicada = async (req, res, next) => {
 
         return res.json(vacinas.rows);
     } catch (error) {
-        return res.json(error);
+        return res.status(500).json({ error: error.message });
     }
 };
 
@@ -27,8 +27,7 @@ const createVacinaAplicada = async (req, res, next) => {
         );
         return res.status(201).json(response.rows[0]);
     } catch (error) {
-        console.log(error);
-        return res.status(409).json(error);
+        return res.status(500).json({ error: error.message });
     }
 };
 
@@ -43,8 +42,7 @@ const deleteVacinaAplicada = async (req, res, next) => {
         );
         return res.status(204).send();
     } catch (error) {
-        console.log(error);
-        return res.status(409).json(error);
+        return res.status(500).json({ error: error.message });
     }
 };
 

@@ -12,8 +12,7 @@ module.exports = {
             );
             return res.json(result.rows);
         } catch (error) {
-            console.log(error);
-            return res.json(error);
+            return res.status(500).json({ error: error.message });
         }
     },
 
@@ -26,8 +25,7 @@ module.exports = {
             );
             return res.json(result.rows);
         } catch (error) {
-            console.log(error);
-            return res.json(error);
+            return res.status(500).json({ error: error.message });
         }
     },
 };
