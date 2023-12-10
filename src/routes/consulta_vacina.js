@@ -132,8 +132,8 @@ routes.get("/consulta/vacina", consultaVacinaController.getConsultaVacina);
  *               mensagem: "Erro interno do servidor"
  */
 routes.get(
-  "/consulta/vacina/idade/:idade",
-  consultaVacinaController.getConsultaVacinaPorIdade
+    "/consulta/vacina/idade/:idade",
+    consultaVacinaController.getConsultaVacinaPorIdade
 );
 
 /**
@@ -203,8 +203,8 @@ routes.get(
  *               mensagem: "Erro interno do servidor"
  */
 routes.get(
-  "/consulta/vacina/range/idade/:idade",
-  consultaVacinaController.getConsultaVacinaPorIdadeRange
+    "/consulta/vacina/range/idade/:idade",
+    consultaVacinaController.getConsultaVacinaPorIdadeRange
 );
 
 /**
@@ -274,8 +274,8 @@ routes.get(
  *               mensagem: "Erro interno do servidor"
  */
 routes.get(
-  "/consulta/vacina/meses/:meses",
-  consultaVacinaController.getConsultaVacinaPorMes
+    "/consulta/vacina/meses/:meses",
+    consultaVacinaController.getConsultaVacinaPorMes
 );
 /**
  * @swagger
@@ -344,8 +344,8 @@ routes.get(
  *               mensagem: "Erro interno do servidor"
  */
 routes.get(
-  "/consulta/vacina/range/meses/:meses",
-  consultaVacinaController.getConsultaVacinaPorMesRange
+    "/consulta/vacina/range/meses/:meses",
+    consultaVacinaController.getConsultaVacinaPorMesRange
 );
 
 /**
@@ -440,87 +440,53 @@ routes.get(
  *               mensagem: "Erro interno do servidor"
  */
 routes.get(
-  "/consulta/vacina/paciente/:id_paciente",
-  consultaVacinaController.getConsultaVacinaPorPaciente
+    "/consulta/vacina/paciente/:id_paciente",
+    consultaVacinaController.getConsultaVacinaPorPaciente
 );
 
 /**
  * @swagger
  * /consulta/vacina/pendente/{id_paciente}:
  *   get:
- *     summary: Consulta vacinas pendentes para um paciente específico
+ *     summary: Consulta vacinas pendentes por paciente.
+ *     description: Retorna as vacinas pendentes para um paciente com base na idade.
  *     tags:
  *       - ConsultaVacina
  *     parameters:
  *       - in: path
  *         name: id_paciente
- *         description: ID do paciente para o qual deseja-se consultar as vacinas pendentes
  *         required: true
+ *         description: ID do paciente para o qual deseja-se consultar as vacinas pendentes.
  *         schema:
  *           type: integer
  *     responses:
  *       200:
- *         description: Sucesso ao obter informações sobre vacinas pendentes para o paciente
+ *         description: Lista de vacinas pendentes.
  *         content:
  *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id_vacina:
- *                     type: integer
- *                     description: ID da vacina pendente
- *                   vacina:
- *                     type: string
- *                     description: Nome da vacina
- *                   sigla_vacina:
- *                     type: string
- *                     description: Sigla da vacina
- *                   doenca_protecao:
- *                     type: string
- *                     description: Doença para a qual a vacina oferece proteção
- *                   dose:
- *                     type: integer
- *                     description: Número da dose
- *                   id_rede:
- *                     type: integer
- *                     description: ID da rede relacionada à vacina
  *             example:
  *               - id_vacina: 1
- *                 vacina: "Vacina B"
- *                 sigla_vacina: "VB"
- *                 doenca_protecao: "Doença Y"
- *                 dose: 2
- *                 id_rede: 456
+ *                 nome: Vacina A
+ *                 desc_ano: 18-25
+ *               - id_vacina: 2
+ *                 nome: Vacina B
+ *                 desc_ano: 18-25
  *       404:
- *         description: Paciente não encontrado ou não possui vacinas pendentes
+ *         description: Paciente não encontrado.
  *         content:
  *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 msg:
- *                   type: string
- *                   description: Mensagem de erro
  *             example:
- *               msg: "Paciente não encontrado ou não possui vacinas pendentes"
+ *               msg: Paciente não encontrado
  *       500:
- *         description: Erro interno do servidor
+ *         description: Erro interno do servidor.
  *         content:
  *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 mensagem:
- *                   type: string
- *                   description: Mensagem de erro
  *             example:
- *               mensagem: "Erro interno do servidor"
+ *               error: Erro interno ao processar a solicitação.
  */
 routes.get(
-  "/consulta/vacina/pendente/:id_paciente",
-  consultaVacinaController.getConsultaVacinaPendentePorPaciente
+    "/consulta/vacina/pendente/:id_paciente",
+    consultaVacinaController.getConsultaVacinaPendentePorPaciente
 );
 
 module.exports = routes;
