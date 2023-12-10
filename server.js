@@ -20,9 +20,11 @@ const swaggerOptions = {
     },
   },
   apis: [
+    "./src/routes/paciente.js",
     "./src/routes/vacina.js",
     "./src/routes/consulta_vacina.js",
     "./src/routes/consulta_vacina-protecao.js",
+    "./src/routes/vacinaAplicada.js",
   ], // Substitua pelo caminho real para o arquivo com suas rotas
 };
 
