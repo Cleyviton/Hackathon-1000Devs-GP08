@@ -3,10 +3,10 @@ const pool = require("../../database");
 module.exports = {
   async createPosto(req, res, next) {
     try {
-      const { endereco, id_rede } = req.query;
+      const { endereco, id_rede, nome } = req.query;
       const result = await pool.query(
-        `INSERT INTO POSTO (endereco, id_rede) VALUES ($1, $2) RETURNING id`,
-        [endereco, id_rede]
+        `INSERT INTO POSTO (endereco, id_rede,nome) VALUES ($1, $2, $3) RETURNING id`,
+        [endereco, id_rede, nome]
       );
       return res.json(result.rows);
     } catch (error) {
