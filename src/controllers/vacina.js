@@ -18,7 +18,7 @@ module.exports = {
       return res.status(201).json(result.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -53,7 +53,7 @@ module.exports = {
       return res.status(200).json(update.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -74,7 +74,7 @@ module.exports = {
       return res.status(200).json(result.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -90,7 +90,7 @@ module.exports = {
       return res.status(200).json(result.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -112,7 +112,7 @@ module.exports = {
       return res.status(200).json(result.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 
@@ -128,7 +128,7 @@ module.exports = {
       return res.status(200).json(result.rows);
     } catch (error) {
       console.log(error);
-      return res.json(error);
+      return res.status(500).json(error);
     }
   },
 };
