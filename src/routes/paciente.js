@@ -10,6 +10,24 @@ const routes = express.Router();
  *     summary: Cria um novo paciente
  *     tags:
  *       - Pacientes
+ *     parameters:
+ *       - in: body
+ *         name: vacina
+ *         description: Dados da vacina a ser cadastrada
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             nome:
+ *               type: string
+ *               description: Nome do paciente
+ *             Data_nascimento:
+ *               type: string
+ *               format: date
+ *               description: Data de nascimento do paciente (YYYY-MM-DD)
+ *           required:
+ *             - nome
+ *             - Data_nascimento
  *     requestBody:
  *       required: true
  *       content:
@@ -74,6 +92,28 @@ routes.post("/pacientes/create", pacienteController.createPaciente);
  *     summary: Atualiza as informações de um paciente existente
  *     tags:
  *       - Pacientes
+ *     parameters:
+ *       - in: body
+ *         name: vacina
+ *         description: Dados da vacina a ser cadastrada
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             id_paciente:
+ *               type: integer
+ *               description: Id do paciente
+ *             nome:
+ *               type: string
+ *               description: Nome do paciente
+ *             Data_nascimento:
+ *               type: string
+ *               format: date
+ *               description: Data de nascimento do paciente (YYYY-MM-DD)
+ *           required:
+ *             - nome
+ *             - Data_nascimento
+ *             - id_paciente
  *     requestBody:
  *       required: true
  *       content:
