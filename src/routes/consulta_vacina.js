@@ -10,20 +10,24 @@ routes.get(
     consultaVacinaController.getConsultaVacinaPorIdade
 );
 routes.get(
-    "/consulta/vacina/mes/:mes",
-    consultaVacinaController.getConsultaVacinaPorMes
-);
-routes.get(
     "/consulta/vacina/range/idade/:idade",
     consultaVacinaController.getConsultaVacinaPorIdadeRange
 );
 routes.get(
-    "/consulta/vacina/range/mes/:mes",
+    "/consulta/vacina/meses/:meses",
+    consultaVacinaController.getConsultaVacinaPorMes
+);
+routes.get(
+    "/consulta/vacina/range/meses/:meses",
     consultaVacinaController.getConsultaVacinaPorMesRange
 );
 routes.get(
     "/consulta/vacina/paciente/:id_paciente",
     consultaVacinaController.getConsultaVacinaPorPaciente
+);
+routes.get(
+    "/consulta/vacina/pendente/:id_paciente",
+    consultaVacinaController.getConsultaVacinaPendentePorPaciente
 );
 
 module.exports = routes;
