@@ -19,7 +19,13 @@ const swaggerOptions = {
       version: "1.0.0",
     },
   },
-  apis: ["./src/routes/vacina.js"], // Substitua pelo caminho real para o arquivo com suas rotas
+  apis: [
+    "./src/routes/paciente.js",
+    "./src/routes/vacina.js",
+    "./src/routes/consulta_vacina.js",
+    "./src/routes/consulta_vacina-protecao.js",
+    "./src/routes/vacinaAplicada.js",
+  ], // Substitua pelo caminho real para o arquivo com suas rotas
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
