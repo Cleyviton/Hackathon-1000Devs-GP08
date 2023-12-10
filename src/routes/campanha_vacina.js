@@ -156,7 +156,7 @@ routes.put("/camapanha/editar", campanhaVacinaController.editarCampanha);
 
 /**
  * @swagger
- * /camapanha/delete:
+ * /camapanha/vacina/delete:
  *   delete:
  *     summary: Remove uma campanha de vacinação, desassociando as vacinas vinculadas
  *     tags:
@@ -174,7 +174,10 @@ routes.put("/camapanha/editar", campanhaVacinaController.editarCampanha);
  *       500:
  *         description: Erro interno do servidor
  */
-routes.delete("/camapanha/delete", campanhaVacinaController.deleteCampanha);
+routes.delete(
+  "/camapanha/vacina/delete",
+  campanhaVacinaController.deleteCampanha
+);
 
 /**
  * @swagger
