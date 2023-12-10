@@ -9,6 +9,7 @@ const vacinaAplicada = require("./src/routes/vacinaAplicada");
 const vacina = require("./src/routes/vacina");
 const consultaVacina = require("./src/routes/consulta_vacina");
 const consultaVacinaProtecao = require("./src/routes/consulta_vacina-protecao");
+const campanhaVacina = require("./src/routes/campanha_vacina");
 const PORT = 3000; // porta do app
 
 const swaggerOptions = {
@@ -25,6 +26,7 @@ const swaggerOptions = {
     "./src/routes/consulta_vacina.js",
     "./src/routes/consulta_vacina-protecao.js",
     "./src/routes/vacinaAplicada.js",
+    "./src/routes/campanha_vacina.js",
   ], // Substitua pelo caminho real para o arquivo com suas rotas
 };
 
@@ -42,6 +44,7 @@ app.use(vacinaAplicada);
 app.use(consultaVacina);
 app.use(vacina);
 app.use(consultaVacinaProtecao);
+app.use(campanhaVacina);
 
 app.listen(PORT, () => {
   console.log(`Servidor Express iniciado em http://localhost:${PORT}`);
